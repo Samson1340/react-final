@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export const postsReducer = (state = initialState, action) => {
-    console.log(action.payload)
+
 
     switch(action.type){
         case GETDATASUCESS:
@@ -22,7 +22,13 @@ export const postsReducer = (state = initialState, action) => {
                     ...state, 
                     posts: [...state.posts.filter(posts => posts.id !== action.payload)]
                 }
+                case GETALBUM:
+            return{
+                ...state,
+                album: action.payload
+            }
         default:
+            
             return{
                 state
             }
@@ -30,7 +36,6 @@ export const postsReducer = (state = initialState, action) => {
 }
 
 export const albumReducer = (state = initialState, action) => {
-    console.log(action.payload)
 
     switch(action.type){
         case GETALBUM:

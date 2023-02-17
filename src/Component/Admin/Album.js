@@ -11,7 +11,6 @@ const Album = () => {
   const dispatch = useDispatch();
   dispatch(GetAlbum());
   const album = useSelector((state) => state.album.album);
-  console.log(album);
   const [album1, setalbum] = useState([]);
   const HundelDelete = (id) => {
     axios.delete(`https://jsonplaceholder.typicode.com/albums${id}`);

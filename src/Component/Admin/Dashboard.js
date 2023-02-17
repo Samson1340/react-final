@@ -7,19 +7,14 @@ import { GetAlbum } from '../Redux/LoginRedux/ActionCreate'
   
 export const Dashboard = () => {
   const dispatch = useDispatch()
+  const post = useSelector(state => state.posts.posts)
+const album = useSelector(state => state.posts.album);
+
   useEffect(() => {
     dispatch(GetDataSucess())
-
-  }, [])
-    
     dispatch(GetAlbum())
-const post = useSelector(state => state.posts.posts)
-const album = useSelector(state => state.album.album);
-
-console.log("post")
   
-console.log(post)
-  
+}, [dispatch])
 
   return (
     <Statistic.Group widths='four'>
